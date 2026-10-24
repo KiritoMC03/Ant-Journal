@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+cd "$(git rev-parse --show-toplevel)"
+node ant-journal-plugin/scripts/public-check.mjs
+# Retain LFS upload behavior when a custom hooksPath is enabled.
+git lfs pre-push "$@"

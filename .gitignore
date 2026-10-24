@@ -1,0 +1,57 @@
+# AntJournal is the public observation archive. Backups and test data stay local.
+/.private/
+/ant-journal-plugin/test-vault/
+
+# Development output and dependency caches.
+**/node_modules/
+/ant-journal-plugin/dist/
+/ant-journal-plugin/.test-output/
+**/.pnpm-store/
+coverage/
+*.log
+
+# Obsidian state, device data, deleted notes, and local tooling state.
+# Publish only the reviewed, portable Obsidian settings below.
+**/.obsidian/*
+!**/.obsidian/app.json
+!**/.obsidian/community-plugins.json
+!**/.obsidian/core-plugins.json
+!**/.obsidian/daily-notes.json
+!**/.obsidian/templates.json
+!**/.obsidian/types.json
+!**/.obsidian/plugins/
+**/.obsidian/plugins/*
+!**/.obsidian/plugins/calendar-hub/
+!**/.obsidian/plugins/metadata-menu/
+**/.obsidian/plugins/calendar-hub/*
+**/.obsidian/plugins/metadata-menu/*
+!/AntJournal/.obsidian/plugins/calendar-hub/data.json
+!/AntJournal/.obsidian/plugins/metadata-menu/data.json
+!/vault-template/.obsidian/plugins/calendar-hub/data.json
+!/vault-template/.obsidian/plugins/metadata-menu/data.json
+**/.trash/
+**/.DS_Store
+**/Thumbs.db
+**/.codex/
+**/.agents/
+**/.aws/
+**/.vscode/
+**/.idea/
+
+# Credentials and exports are never public project inputs.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+*service-account*.json
+*.har
+
+# Keep the reusable starter empty; real observations belong in AntJournal.
+/vault-template/Journal/**
+!/vault-template/Journal/.gitkeep
+/vault-template/Attachments/**
+!/vault-template/Attachments/.gitkeep

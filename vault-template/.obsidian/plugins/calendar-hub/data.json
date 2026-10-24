@@ -1,0 +1,13 @@
+{
+  "shouldConfirmBeforeCreate": true,
+  "shouldIndexDailyNotesInAllFolders": true,
+  "dailyNoteIncludedFolders": "Journal",
+  "shouldIndexDailyNotesFromFrontmatter": false,
+  "dailyNoteFrontmatterDateFields": "date",
+  "dailyNoteFilenameDateFormat": "YYYY-MM-DD",
+  "shouldIndexDailyNotesFromCreationDate": false,
+  "showWeeklyNote": false,
+  "weekStart": "monday",
+  "localeOverride": "en",
+  "sidebarViewMode": "calendar"
+}

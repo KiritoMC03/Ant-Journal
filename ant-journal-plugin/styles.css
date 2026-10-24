@@ -1,0 +1,22 @@
+.ant-journal { font-size: var(--font-text-size); }
+.ant-journal .ant-controls { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0; }
+.ant-journal .ant-controls select { max-width: 100%; }
+.ant-journal .ant-table-scroll { overflow-x: auto; margin: 1rem 0; }
+.ant-journal table { width: 100%; font-size: .86em; border-collapse: collapse; }
+.ant-journal th, .ant-journal td { padding: .5rem .65rem; border-bottom: 1px solid var(--background-modifier-border); text-align: left; white-space: nowrap; }
+.ant-journal .ant-cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: .75rem; }
+.ant-journal .ant-card { border: 1px solid var(--background-modifier-border); border-radius: 8px; padding: 1rem; }
+.ant-journal .ant-card strong { display: block; font-size: 1.8em; color: var(--text-accent); }
+.ant-journal .ant-card span { display: block; font-size: .85em; margin-top: .5rem; }
+.ant-journal .ant-chart { margin: 1.25rem 0; padding: .75rem; border: 1px solid var(--background-modifier-border); border-radius: 8px; }
+.ant-journal .ant-chart svg { width: 100%; height: auto; max-height: 260px; }
+.ant-journal .ant-chart text { fill: var(--text-muted); font-size: 12px; }
+.ant-journal .ant-axis { fill: none; stroke: var(--background-modifier-border); stroke-width: 1; }
+.ant-journal .ant-point { fill: var(--text-accent); stroke: var(--text-accent); stroke-width: 2; cursor: pointer; }
+.ant-journal .ant-point.ant-approx { fill: var(--background-primary); }
+.ant-journal .ant-point:focus { outline: 2px solid var(--text-accent); }
+.ant-journal .ant-issue { border-left: 3px solid var(--text-error); margin: 1rem 0; padding: .5rem .75rem; background: var(--background-secondary); overflow-wrap: anywhere; }
+.ant-journal .ant-issue a { display: block; margin-top: .3rem; }
+.ant-journal .ant-issue p { margin-bottom: 0; }
+.ant-journal .ant-warning { color: var(--text-warning); border-color: var(--text-warning); }
+.ant-status { cursor: pointer; }

@@ -1,0 +1,38 @@
+{
+  "settingsVersion": "5.0",
+  "presetFields": [],
+  "fileClassQueries": [],
+  "classFilesPath": "FileClasses/",
+  "fileClassAlias": "fileClass",
+  "frontmatterOnly": true,
+  "displayFieldsInContextMenu": false,
+  "globallyIgnoredFields": [
+    "_metric_workers",
+    "_metric_queens",
+    "_metric_eggs",
+    "_metric_larvae",
+    "_metric_pupae",
+    "_metric_worker_deaths",
+    "_metric_temperature_c",
+    "_metric_humidity_pct"
+  ],
+  "fileIndexingExcludedFolders": [
+    "Templates",
+    "Docs",
+    "Dashboards",
+    "Config"
+  ],
+  "isAutosuggestEnabled": true,
+  "enableProperties": true,
+  "enableTabHeader": true,
+  "enableFileExplorer": true,
+  "enableEditor": true,
+  "enableMarkdown": true,
+  "enableLinks": true,
+  "firstDayOfWeek": 1,
+  "chooseFileClassAtFileCreation": false,
+  "autoInsertFieldsAtFileClassInsertion": false,
+  "showFileClassSelectInModal": false,
+  "isAutoCalculationEnabled": false,
+  "disableDataviewPrompt": true
+}

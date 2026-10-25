@@ -2,6 +2,7 @@ import { Component, ItemView, MarkdownRenderChild, MarkdownRenderer, Notice, Plu
 import { auditVault, feeding, series, statistics, type Audit } from './journal';
 import { syncMetrics, readMarkdown } from './markdown';
 import { NUMBER_FIELDS, display, issue, validDate, type Issue, type Measurement, type NumberField, type Row, type Source } from './model';
+import { chartLinePath } from './chart';
 
 const VALIDATION_VIEW = 'ant-journal-validation';
 const LABELS: Record<string,string> = { workers:'Workers', queens:'Queens', eggs:'Eggs', larvae:'Larvae', pupae:'Pupae', worker_deaths:'Deaths since previous observation', temperature_c:'Temperature C', humidity_pct:'Humidity %', feed_syrup:'Syrup', feed_protein:'Protein', feed_seeds:'Seeds', living:'Living individuals across all stages', cumulativeDeaths:'Cumulative deaths', produced:'Workers produced during observations', totalEverObserved:'Workers + deaths (includes baseline)' };
@@ -262,12 +263,19 @@ class JournalBlock extends MarkdownRenderChild {
     figure.appendChild(svg);
     const dates = all.map(p=>Date.parse(p.date+'T00:00:00Z'));
     const minX = Math.min(...dates), maxX = Math.max(...dates), minY = Math.min(0,...points.map(p=>p.value)), maxY = Math.max(1,...points.map(p=>p.value));
+    const projectX = (date: string) => 45+(Date.parse(date+'T00:00:00Z')-minX)/(maxX-minX || 1)*590;
+    const projectY = (value: number) => 170-(value-minY)/(maxY-minY)*140;
     const text = (x: number,y: number,value: string) => { const t=document.createElementNS(ns,'text'); t.setAttribute('x',String(x)); t.setAttribute('y',String(y)); t.textContent=value; svg.appendChild(t); };
     text(2,18,String(maxY)); text(2,168,String(minY)); text(45,202,all[0].date); text(535,202,all.at(-1)!.date);
     const line = document.createElementNS(ns,'path'); line.setAttribute('d','M 44 24 V 172 H 642'); line.setAttribute('class','ant-axis'); svg.appendChild(line);
+    const path = chartLinePath(all,projectX,projectY);
+    if (path) {
+      const curve = document.createElementNS(ns,'path');
+      curve.setAttribute('d',path); curve.setAttribute('class','ant-line'); curve.setAttribute('aria-hidden','true');
+      svg.appendChild(curve);
+    }
     for (const p of points) {
-      const x=45+(Date.parse(p.date+'T00:00:00Z')-minX)/(maxX-minX || 1)*590;
-      const y=170-(p.value-minY)/(maxY-minY)*140;
+      const x=projectX(p.date), y=projectY(p.value);
       const circle = document.createElementNS(ns,'circle'); circle.setAttribute('cx',String(x)); circle.setAttribute('cy',String(y)); circle.setAttribute('r','5'); circle.setAttribute('class',p.approximate?'ant-point ant-approx':'ant-point'); circle.setAttribute('tabindex','0');
       const label=`${p.date}: ${p.approximate?'~':''}${p.value}`;
       circle.setAttribute('aria-label',label); const title=document.createElementNS(ns,'title'); title.textContent=label; circle.appendChild(title);
@@ -275,7 +283,7 @@ class JournalBlock extends MarkdownRenderChild {
       circle.addEventListener('keydown',e=>{ if(e.key==='Enter') void this.plugin.app.workspace.openLinkText(p.path,'',true); });
       svg.appendChild(circle);
     }
-    figure.createEl('small',{text:'Filled: exact; hollow: approximate (~). Observation dates only, without interpolation. Select a point to open its record.'});
+    figure.createEl('small',{text:'Filled: exact; hollow: approximate (~). Lines connect observed values and break at unknown values. Missing days add no measurements. Select a point to open its record.'});
   }
   private refreshTrackers() {
     // Use public MarkdownRenderer rather than Tracker internals.

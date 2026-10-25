@@ -24,11 +24,11 @@ test('Calendar Hub scans Journal only and uses filename dates without ctime fall
   assert.equal(settings.dailyNoteIncludedFolders,'Journal');assert.equal(settings.dailyNoteFilenameDateFormat,'YYYY-MM-DD');assert.equal(settings.shouldIndexDailyNotesFromCreationDate,false);assert.equal(settings.shouldIndexDailyNotesInAllFolders,true);
   // This checks supplied configuration, not Calendar Hub UI behavior.
 });
-test('Tracker configurations isolate colonies and preserve zero and gaps without interpolation',async()=> {
+test('Tracker configurations enable lines while isolating colonies and preserving zero and gaps',async()=> {
   for(const id of ['cn-01','cj-01','ag-01']) {
     const text=await readFile(resolve(root,`Dashboards/${id}.md`),'utf8');
     const blocks=[...text.matchAll(/^```tracker\n([\s\S]*?)^```/gm)];assert.equal(blocks.length,4);
-    for(const match of blocks) {const config=parse(match[1]);assert.equal(config.folder,`Journal/${id}`);assert.equal(config.searchType,'frontmatter');assert.equal(config.dateFormat,'YYYY-MM-DD');assert.equal(config.ignoreZeroValue,false);assert.equal(config.line.fillGap,false);assert.equal(config.line.showLine,false);assert.ok(config.searchTarget.includes('_metric_'));}
+    for(const match of blocks) {const config=parse(match[1]);assert.equal(config.folder,`Journal/${id}`);assert.equal(config.searchType,'frontmatter');assert.equal(config.dateFormat,'YYYY-MM-DD');assert.equal(config.ignoreZeroValue,false);assert.equal(config.line.fillGap,false);assert.equal(config.line.showLine,true);assert.equal(config.line.showPoint,true);assert.ok(config.searchTarget.includes('_metric_'));}
   }
 });
 test('Metadata Menu maps folders and preserves mixed measurement formats',async()=> {

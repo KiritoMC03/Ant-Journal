@@ -12,6 +12,7 @@
 .ant-journal .ant-chart svg { width: 100%; height: auto; max-height: 260px; }
 .ant-journal .ant-chart text { fill: var(--text-muted); font-size: 12px; }
 .ant-journal .ant-axis { fill: none; stroke: var(--background-modifier-border); stroke-width: 1; }
+.ant-journal .ant-line { fill: none; stroke: var(--text-accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; pointer-events: none; }
 .ant-journal .ant-point { fill: var(--text-accent); stroke: var(--text-accent); stroke-width: 2; cursor: pointer; }
 .ant-journal .ant-point.ant-approx { fill: var(--background-primary); }
 .ant-journal .ant-point:focus { outline: 2px solid var(--text-accent); }

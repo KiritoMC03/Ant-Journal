@@ -11,3 +11,9 @@ The publication checker allows actual journal records and original archive media
 Git operations during this revision are read-only. No stage/unstage commands are run. Existing indexed versions can differ from working files and must pass their own audit before later publication. Verification tests inject Git read responses for staged/history scenarios and do not create commits or modify Git indexes. Optional hook installation is documented but is not performed.
 
 Verification results are recorded in [Acceptance](Acceptance.md). Earlier desktop UI checks apply to their tested revision; no new desktop UI pass is claimed for these archive/documentation changes. No commit, push, pull, remote publication, or history rewrite is performed.
+
+## Line charts
+
+Tracker dashboards and their generator now use showLine: true with showPoint: true and fillGap: false. Core ant-journal SVG charts connect consecutive known measurements with straight lines behind the point markers. Unknown values break the line; isolated values remain points. Missing dates do not generate measurements. Approximate values retain hollow markers. The rebuilt plugin must be reloaded in Obsidian to apply the new renderer.
+
+Line-chart verification: all 79 automated tests passed, TypeScript checking passed, and the bundle was built and installed into the main and synthetic test vaults. Tracker configurations, zero/approximate points, irregular dates, unknown-value breaks, isolated points, and incomplete calculated series are covered. No new desktop UI verification is claimed. A separate working-file publication check flagged Cyrillic text in Journal/cj-01/2026-09-15.md; that observation was outside this chart-only edit.

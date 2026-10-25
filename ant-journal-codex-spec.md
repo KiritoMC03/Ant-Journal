@@ -38,7 +38,7 @@ produced_workers = current workers + cumulative deaths - initial_workers. Do not
 
 Optionally display workers + cumulative deaths, explicitly including baseline. Accumulate full history before filtering a period. Compare last-known measurements with their own dates. Count only true feeding flags; unobserved days are not false.
 
-Prefer Tracker for direct numeric _metric_* series with per-colony folders and YYYY-MM-DD filename dates. Use fillGap false, showLine false, showPoint true, ignoreZeroValue false; no missing-day penalties or implied observations. Core may render calculated SVG series and tables. All views update after saving/recalculation. Home includes colony links and three latest records.
+Prefer Tracker for direct numeric _metric_* series with per-colony folders and YYYY-MM-DD filename dates. Use fillGap false, showLine true, showPoint true, ignoreZeroValue false; no missing-day penalties or implied observations. Core renders calculated SVG series with connecting lines and point markers, breaking lines at unknown values, plus tables. All views update after saving/recalculation. Home includes colony links and three latest records.
 
 ## Calendar, attachments, notifications
 

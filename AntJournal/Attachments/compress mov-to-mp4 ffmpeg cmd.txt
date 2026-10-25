@@ -1,1 +1,1 @@
-ffmpeg -i "input.mov" -vf "scale=1280:720:flags=lanczos" -c:v libx264 -preset slow -crf 24 -pix_fmt yuv420p -an -movflags +faststart "output.mp4"
+ffmpeg -i "input.mov" -vf "scale=720:1280:flags=lanczos" -c:v libx264 -preset slow -crf 24 -pix_fmt yuv420p -an -movflags +faststart "output.mp4"

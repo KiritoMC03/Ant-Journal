@@ -17,3 +17,7 @@ view: recent
 ```
 
 Real observations and original media in AntJournal are intended for public readers. Refresh the static [observation archive](Archive.md) with pnpm run archive:render after editing records. Keep secrets and local runtime state excluded; see [Publication policy](Docs/Privacy.md).
+
+## Reuse
+
+Human reuse is royalty-free under the [project license](LICENSE), including commercial use, while preserving notices and the LLM restriction in copies and adaptations. [LLM access, AI-assisted editing, and model training](AI_POLICY.md) are not licensed. See [Licensing](Docs/Licensing.md) for third-party exceptions and hosting limits.

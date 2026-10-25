@@ -1,0 +1,146 @@
+Ant Journal Human Use License 1.0
+License identifier: LicenseRef-Ant-Journal-Human-Use-1.0
+Published: 2026-10-25
+
+Copyright (c) 2026 the respective copyright holders.
+
+1. Scope and definitions
+
+"Covered Material" means the original material distributed under this license,
+including repository source code, scripts, configuration, templates,
+documentation, observation text, photographs, videos, other original media,
+and copyrightable selection or arrangement of those materials. It includes
+modified versions and adaptations licensed under section 4. This license is
+granted by each copyright holder only for rights that holder can license.
+
+Separately licensed third-party material is excluded. Its own license and
+notices control, including when it is bundled with Covered Material. See
+THIRD_PARTY_NOTICES.md where supplied. This license does not claim ownership
+of unprotectable facts, ideas, methods, or material in the public domain.
+
+"LLM System" means a large language model, including a multimodal model with
+language-processing or language-generation capabilities, or an application,
+assistant, agent, service, or pipeline that uses such a model to process
+Covered Material. Local, self-hosted, remote, commercial, noncommercial,
+research, and human-supervised systems are all included.
+
+"You" means a natural person or a legal entity exercising rights granted by
+this license. Restrictions apply to You and to systems acting on Your behalf;
+the license does not depend on treating a model as a legal person.
+
+2. Free permission for human use
+
+Subject to sections 3 and 4, each copyright holder grants You a worldwide,
+nonexclusive, royalty-free permission, without an expiration date, to read,
+study, use, run, copy, reproduce, display, perform, modify, adapt, translate,
+combine, publish, distribute, fork, and sell Covered Material and copies or
+adaptations of it. Commercial and noncommercial human uses are permitted.
+
+Ordinary tools such as browsers, editors, compilers, version control,
+non-LLM search, backups, accessibility software, and deterministic automation
+are permitted, provided they do not perform a use prohibited by section 3.
+No payment, registration, use reporting, publication of private changes, or
+separate permission is required for a use allowed by this license.
+
+3. No LLM access, processing, modification, or training
+
+Subject to section 5, including rights separately granted under applicable
+GitHub Terms of Service or another hosting agreement, this license grants
+no permission to do any of the following, directly or through another
+person, account, service, dataset, or intermediary:
+
+(a) Give an LLM System access to Covered Material, or cause it to fetch, read,
+    view, ingest, inspect, analyze, summarize, translate, answer questions
+    about, review, generate changes to, modify, or otherwise process Covered
+    Material. This includes AI coding assistants and agents, even when a
+    human approves their output.
+
+(b) Submit Covered Material as a prompt, context, attachment, tool response,
+    screenshot, image input, retrieval source, or other input to an LLM
+    System, or create embeddings, vector stores, or retrieval-augmented
+    generation indexes for use by such a system from Covered Material.
+
+(c) Use Covered Material to develop, pretrain, train, fine-tune, align,
+    distill, evaluate, benchmark, or improve an LLM System, or create or
+    augment a dataset for those purposes, including through synthetic
+    examples or model-generated transformations of Covered Material.
+
+(d) Sell, license, supply, or redistribute Covered Material specifically to
+    facilitate a use prohibited by this section, or remove these conditions
+    to enable such a use. Ordinary public redistribution for permitted human
+    use is allowed subject to section 4.
+
+Reading this license and an accompanying AI_POLICY.md solely to identify
+and comply with their restrictions does not authorize processing any other
+Covered Material. A separate, express permission from the relevant copyright
+holders is required for a restricted use; possession of a public copy, a
+paid account, a fork, or permission from an unrelated fork maintainer is not
+such permission. Authorization for one specified maintenance task does not
+authorize unrelated access, dataset collection, or model training.
+
+4. Copies, forks, and modifications
+
+Every distribution of Covered Material or a substantial part of it must
+retain this complete license and applicable copyright and third-party
+notices. This includes source and binary distributions, archives, mirrors,
+forks, forks of forks, and redistributed observation/media collections.
+For a standalone media file, an accompanying license file or clearly
+associated license notice must travel with the distribution.
+
+Subject to section 5, You must license modifications and adaptations of
+Covered Material under these same terms, including section 3. You may not
+remove, waive, dilute, or sublicense around section 3 for inherited Covered
+Material or adaptations of it. A change of repository name, host, owner,
+format, language, or access method does not remove these conditions.
+
+This requirement does not apply to independent, separately identifiable
+works merely distributed alongside Covered Material, and does not replace
+the licenses of third-party components. It does not require publication
+of changes that You do not distribute.
+
+5. Limits of the grant and reservation of rights
+
+All rights not expressly granted are reserved. To the extent these rights
+can lawfully be reserved, the copyright holders expressly reserve use of
+Covered Material for text and data mining connected with the LLM purposes
+in section 3. This is not an assertion that all mining is subject to consent.
+
+This license does not limit rights or exceptions that applicable law makes
+available independently of a license, including nonwaivable exceptions. It
+does not revoke permissions already granted under a different license or
+override separate agreements accepted by a copyright holder, including a
+hosting provider's terms. No trademark, endorsement, or privacy/personality
+right is granted. A public license is not a technical access-control system.
+
+For the avoidance of doubt, nothing in this license, including sections 3,
+4, and 6, limits rights separately and validly granted by the relevant
+copyright holders under the applicable GitHub Terms of Service or another
+hosting agreement. This includes public viewing, platform forking, and
+provider processing only to the extent permitted by that separate grant.
+
+This clarification creates no new permission and does not expand, renew,
+or replace any separate grant. Such a grant remains subject to its own
+scope, conditions, and duration. It is not a blanket exemption for a host,
+its affiliates, its users, or LLM Systems. Uses outside independently
+granted rights remain subject to this license where its permission is
+required. Moving or forking material does not itself create a new exemption.
+
+6. Termination
+
+Permissions granted under this license terminate automatically if You fail
+to comply with its conditions. Termination does not affect independently
+granted rights, mandatory legal exceptions, or the rights of recipients who
+continue to comply with this license.
+
+7. No warranty; limitation of liability
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, COVERED MATERIAL IS PROVIDED
+"AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+THE COPYRIGHT HOLDERS AND CONTRIBUTORS ARE NOT LIABLE FOR CLAIMS, DAMAGES,
+OR OTHER LIABILITY ARISING FROM THE MATERIAL OR ITS USE, WHETHER IN CONTRACT,
+TORT, OR OTHERWISE. MANDATORY RIGHTS AND LIABILITIES ARE NOT EXCLUDED.
+
+This is a custom source-available license with an LLM-use restriction.
+It is not the MIT License, a public-domain dedication, or an assertion of
+Open Source Initiative approval.

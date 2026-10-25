@@ -11,6 +11,10 @@ await mkdir('.test-output', {recursive:true});
 const root = await mkdtemp(resolve('.test-output/config-vault-'));
 const { init } = await import(pathToFileURL(resolve('scripts/init-vault.mjs')).href);
 await init(root);
+
+test('exported vaults include the complete project license and LLM policy',async()=> {
+  for(const name of ['LICENSE','AI_POLICY.md'])assert.equal(await readFile(resolve(root,name),'utf8'),await readFile(resolve('..',name),'utf8'));
+});
 test('new vault is empty and colony cards have no fabricated baseline',async()=> {
   const sources:Source[]=[];
   for(const id of ['cn-01','cj-01','ag-01']) {

@@ -9,3 +9,5 @@ Run `pnpm run check:public` from ant-journal-plugin to inspect working candidate
 The check allows journal observations and original images/videos in AntJournal/Attachments. It does not scan binary metadata or prove that prose/media contains no identifying information. Review content you intend to disclose. LFS stores large files; it provides no confidentiality.
 
 Use minimal synthetic reproductions for bugs; avoid credentials and local logs in public reports. If a credential is exposed, revoke it and follow the hosting provider's removal process. No automatic publication or history rewrite is performed.
+
+[License and LLM policy](AI_POLICY.md) set conditions for covered first-party material. They do not implement access control or override rights separately granted to a hosting provider. Review [Licensing](docs/Licensing.md) before public hosting.

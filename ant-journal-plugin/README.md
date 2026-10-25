@@ -39,3 +39,8 @@ The overview discovers valid colony cards. Colony views provide source/calculate
 Metadata Menu setup is `pnpm run setup:metadata`; it creates missing folder-mapped schemas and refreshes the separate colony ID list while preserving user settings and observations. [Fields](../docs/Fields.md) explains type choices.
 
 AntJournal is the real public archive; never use its observations as mutable test fixtures. The generated test-vault, dependency/build/test output, installed plugins, and private backups are ignored. The archive renderer reads real notes and writes only a static Markdown index. The publication check reads working files, staged blobs, and reachable history without changing Git state. [Privacy](../docs/Privacy.md) explains scope and limitations.
+
+
+## License
+
+Original project code uses the [Ant Journal Human Use License 1.0](LICENSE). Read [AI_POLICY.md](AI_POLICY.md) before using LLM tools or submitting repository content to an assistant. A built distribution includes both notices; bundled yaml retains its original ISC notice. [Licensing scope and hosting limits](../docs/Licensing.md) and [third-party notices](../THIRD_PARTY_NOTICES.md) explain the boundaries.

@@ -7,7 +7,7 @@ const root=resolve(project,'test-vault');
 await init(root);
 for(const release of [...releases,{id:'ant-journal-core'}]) {
   const target=resolve(root,'.obsidian/plugins',release.id);await mkdir(target,{recursive:true});
-  for(const name of ['main.js','manifest.json','styles.css']) await copyFile(resolve(vault,'.obsidian/plugins',release.id,name),resolve(target,name));
+  for(const name of ['main.js','manifest.json','styles.css',...(release.id==='ant-journal-core'?['LICENSE','AI_POLICY.md']:[])]) await copyFile(resolve(vault,'.obsidian/plugins',release.id,name),resolve(target,name));
 }
 for(const name of ['test-photo.png','test-photo.jpg','test-original.heic']) {
   try {await copyFile(resolve(project,'test/fixtures',name),resolve(root,'Attachments',name),1);}

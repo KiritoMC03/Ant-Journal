@@ -2,6 +2,7 @@
   "name": "ant-journal-core",
   "version": "1.1.0",
   "private": true,
+  "license": "SEE LICENSE IN LICENSE",
   "packageManager": "pnpm@11.25.0",
   "type": "module",
   "engines": { "node": ">=22" },

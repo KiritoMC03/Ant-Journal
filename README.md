@@ -2,6 +2,12 @@
 
 A public archive of ant colony observations and original photographs, with an offline Obsidian workspace for validation, calendars, charts, and typed Metadata Menu controls. The source of truth is plain English Markdown with YAML properties.
 
+## License
+
+Original code, journal text, and media use the [Ant Journal Human Use License 1.0](LICENSE): royalty-free human use, including commercial use, modification, and redistribution, subject to preserving the license and its LLM-use prohibition in copies and adaptations. [LLM access, AI-assisted editing, and model training](AI_POLICY.md) are not licensed. Third-party material retains [its own terms](THIRD_PARTY_NOTICES.md). This is a custom source-available license, not an OSI-approved open-source license.
+
+A public license cannot technically block access or override mandatory legal exceptions or separate hosting agreements. Read the [licensing and hosting limits](docs/Licensing.md), including the GitHub-specific AI-training grant, before publication.
+
 ## Read the archive
 
 Start with the [observation archive](AntJournal/Archive.md): browse the monthly calendar, choose a colony, and open dated entries with their photographs. No Obsidian installation or account is needed to read the Markdown in a public repository. Interactive charts and editing controls run locally in Obsidian.
@@ -40,6 +46,8 @@ pnpm run check:public
 ```
 
 The static archive index is refreshed explicitly after edits. Calendar Hub and charts refresh inside Obsidian after saving. [Data schema](docs/DataSchema.md), [Validation](docs/Validation.md), and [Acceptance](docs/Acceptance.md) explain calculations, error handling, and verification limits. [Notifications](docs/Notifications.md) covers optional independent feeding reminders.
+
+The proposed [GitHub Pages publishing design](docs/GitHubPages.md) describes an automatically generated website, live local previews, shared journal calculations, and media handling. It is an architecture plan; the website and deployment workflow are not implemented yet.
 
 ## Publication policy
 

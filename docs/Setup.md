@@ -16,7 +16,7 @@ pnpm run check
 pnpm test
 ```
 
-Open the generated AntJournal folder as a vault. Review Obsidian's trust prompt yourself and enable the four community plugins. The setup does not bypass Restricted Mode or change global security settings. `init:vault` preserves existing files; inspect its optional target argument before using a nondefault directory. The plugin install copies only main.js, manifest.json, and styles.css.
+Open the generated AntJournal folder as a vault. Review Obsidian's trust prompt yourself and enable the four community plugins. The setup does not bypass Restricted Mode or change global security settings. `init:vault` preserves existing files; inspect its optional target argument before using a nondefault directory. The plugin install copies main.js, manifest.json, styles.css, LICENSE, and AI_POLICY.md. The bundle preserves the third-party yaml notice.
 
 | Component | Pinned version |
 | --- | --- |

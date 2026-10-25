@@ -23,7 +23,7 @@ await mkdir(resolve(project,'.test-output'),{recursive:true});
 const temporary=await mkdtemp(resolve(project,'.test-output/public-template-'));
 await init(temporary);
 await put(temporary,'Journal/.gitkeep','');await put(temporary,'Attachments/.gitkeep','');
-await put(temporary,'README.md','# Clean public template\n\nThis is a generated, empty starter. Run the setup commands in the repository README to set up the AntJournal archive workspace. This template is independent of the real public records. Keep this reusable template empty; real observations belong in AntJournal.\n');
+await put(temporary,'README.md','# Clean public template\n\nThis is a generated, empty starter. Run the setup commands in the repository README to set up the AntJournal archive workspace. This template is independent of the real public records. Keep this reusable template empty; real observations belong in AntJournal.\n\nReuse is governed by [LICENSE](LICENSE) and [AI_POLICY.md](AI_POLICY.md); see [Licensing](Docs/Licensing.md) for the scope and hosting limits.\n');
 async function copyGenerated(from,to) {
   await mkdir(to,{recursive:true});
   for(const entry of await readdir(from,{withFileTypes:true})) {

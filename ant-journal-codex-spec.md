@@ -14,7 +14,7 @@ Make AntJournal observations, colony cards, original media, navigation, and port
 
 The starter has example cards cn-01 / Camponotus nicobarensis, cj-01 / Camponotus japonicus, and ag-01 / Acanthomyrmex glabfemoralis. ID is stable and independent of species/name. Add colonies through cards and folders without recompiling.
 
-Vault layout: Home.md; Archive.md; Colonies/<id>.md; Journal/<id>/YYYY-MM-DD.md; Dashboards/Overview.md and per-colony dashboards; Templates/Observation.md; Attachments/; Docs/; FileClasses/; Config/ColonyIds.md; .obsidian/. Development lives in the sibling ant-journal-plugin TypeScript project. Install only manifest.json, main.js, and styles.css for core.
+Vault layout: Home.md; Archive.md; Colonies/<id>.md; Journal/<id>/YYYY-MM-DD.md; Dashboards/Overview.md and per-colony dashboards; Templates/Observation.md; Attachments/; Docs/; FileClasses/; Config/ColonyIds.md; .obsidian/. Development lives in the sibling ant-journal-plugin TypeScript project. Install manifest.json, main.js, styles.css, LICENSE, and AI_POLICY.md for core.
 
 Cards require id and species. Optional name, founded_on, acquired_on, origin, formicarium, initial_workers, and custom information remain blank unless known. initial_workers is the baseline at the start of observations, not an inferred first-record population.
 
@@ -55,3 +55,7 @@ Test parsing, unknown/zero semantics, required booleans, range/date/path/ID erro
 Desktop smoke scenarios: three files on one date in Calendar Hub, opening each independently, graphs using exact/approximate/zero values without missing-day points, saved count changes updating charts, automatic precise validation errors, calculated metrics and incomplete-history warnings, and ordinary Markdown/photo access with core disabled. Document only actually completed UI checks; phone delivery and unsupported media preview require separate manual acceptance.
 
 Reproduce builds, plugin installation, public-template generation, and publication checks on Windows without editing generated bundles. Preserve source observation values and original attachment bytes. Permit the real public archive while excluding secrets, runtime state, and local backups. Supply usage, schema, validation, typed-control, notification, privacy/LFS instructions, verification evidence, and known limits.
+
+## Licensing
+
+Original project material is source-available under the Ant Journal Human Use License 1.0: royalty-free human reuse, including commercial use, with preservation of notices and a prohibition on LLM access, processing, modification, and training. Carry these terms into distributed copies, forks, and adaptations, while preserving separately licensed third-party components. Include LICENSE and AI_POLICY.md in exported vaults and plugin bundles. Do not claim technical access blocking, OSI approval, or priority over mandatory legal exceptions, earlier grants, or separate hosting agreements. See docs/Licensing.md for the checked hosting limits.

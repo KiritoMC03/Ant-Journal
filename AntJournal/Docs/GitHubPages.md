@@ -1,6 +1,37 @@
 # GitHub Pages publishing design
 
-Status: proposed architecture, not an implemented or deployed website. Reviewed against official documentation on 2026-10-25. All website text should be English. The existing observation files and original media remain the source of truth.
+Status: implemented locally in website/ with a prepared GitHub Pages workflow. Remote activation and deployment have not been performed. The original architecture record below is retained for context; the operating instructions in this section describe the delivered implementation.
+
+## Run and publish
+
+Use Node.js 24.15+, npm, the existing core dependencies, and ffmpeg for video posters. From the repository root, install the core dependencies as documented in Setup, then:
+
+```powershell
+cd website
+npm ci --ignore-scripts
+npm run dev
+```
+
+The terminal prints the preview URL. Keep the server running and edit the existing AntJournal vault. Added/edited/renamed/deleted notes and pages are discovered automatically. Stop it with Ctrl+C.
+
+```powershell
+npm test
+npm run check
+npm run build
+npm run preview
+```
+
+The website reads real source YAML, sharing validation, statistics, feeding logic, and chart geometry with the core. It supports Markdown and Obsidian embeds, responsive images, video posters, theme selection, search and URL filters, a multi-colony calendar, chart/date controls, measurement tables, and feeding dates/counts in the selected period. Pages/**/*.md and new colony cards are discovered without menu/configuration edits.
+
+The build checks internal links, repository subpaths, missing LFS objects, original-media hashes, and a 900 MiB size budget. It warns at 750 MiB. Only referenced media is included. All original media stays unchanged; derived files and website output stay ignored. Existing Home.md and Archive.md do not need to be regenerated for this website.
+
+One time on GitHub, select Settings → Pages → GitHub Actions. The supplied .github/workflows/pages.yml checks pushes and pull requests and deploys only from the repository's default branch. The owner performs normal commits/pushes; the workflow never writes commits, creates tags, or modifies repository content. Pages origin/base paths are discovered automatically. A real hosted media smoke test remains pending until the owner activates Pages and publishes.
+
+Local verification covered calendar entries for several colonies on one date, colony filtering, full-text observation search, calculated production and date filtering, light/dark layouts, and a 390-pixel responsive viewport with no horizontal document overflow. An isolated watched test vault passed add/edit/rename/delete and changed-measurement scenarios without restarting the server. No synthetic records were added to the real journal. The real archive retains its measurement warnings instead of having facts adjusted.
+
+The current website build contains 28 content pages plus a 404 page and 11 original media files, about 60 MiB in total. Sizes/counts are snapshots of this revision and change automatically as the archive grows. No remote deployment is claimed.
+
+## Original architecture record
 
 ## Recommended approach
 
@@ -134,4 +165,4 @@ One-time owner setup is choosing the repository, enabling Actions-based Pages, a
 
 Completion means that adding a valid observation, colony card, image/video, or general page automatically creates every required route, index entry, calendar item, and relevant chart update. Editing an old measurement updates later cumulative values. Deleting content removes it from generated navigation and media discovery. No manual menu, JSON, chart dataset, thumbnail, HTML, or index-file edits are needed.
 
-This planning revision does not install a framework, add an active workflow, change the journal, or perform Git writes.
+The implementation is local; the supplied workflow is activated through the owner's normal publication process. No Git write command or remote deployment was performed during this work.

@@ -8,7 +8,7 @@ const scan=(path:string,text:string)=>scanPublicationEntry(path,Buffer.from(text
 const fakeToken=()=>['ghp','_', 'x'.repeat(36)].join('');
 
 test('publication rejects backups and runtime files even when force-added',()=> {
-  for(const path of ['.private/backups/note.md','ant-journal-plugin/test-vault/SMOKE.md','vault-template/Journal/example/2026-10-24.md','vault-template/Attachments/private.jpg','vault-template/.obsidian/workspace.json','AntJournal/.obsidian/appearance.json','AntJournal/.obsidian/plugins/installed-releases.json','.env','account.key']) assert.ok(scan(path,'benign text').length,path);
+  for(const path of ['.private/backups/note.md','ant-journal-plugin/test-vault/SMOKE.md','website/dist/index.html','website/.generated/snapshot.json','website/.cache/asset.json','website/.test-output/note.md','vault-template/Journal/example/2026-10-24.md','vault-template/Attachments/private.jpg','vault-template/.obsidian/workspace.json','AntJournal/.obsidian/appearance.json','AntJournal/.obsidian/plugins/installed-releases.json','.env','account.key']) assert.ok(scan(path,'benign text').length,path);
   assert.ok(scan('vault-template/.obsidian/plugins/other/data.json','{}').some(x=>x.code==='RUNTIME_PLUGIN_SETTINGS'));
   assert.equal(scan('vault-template/Journal/.gitkeep','').length,0);
 });

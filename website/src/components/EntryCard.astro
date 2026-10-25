@@ -1,0 +1,14 @@
+---
+import type {Entry,Colony} from '../lib/types';
+import {url} from '../lib/config';
+import {dateLabel} from '../lib/visuals';
+const {entry,colony}=Astro.props as {entry:Entry;colony:Colony};
+const cover=entry.media.find(m=>m.kind==='image')??colony.cover;
+---
+<article class="entry-card" data-record data-date={entry.date} data-colony={entry.colonyId} data-search={`${colony.name} ${colony.species} ${entry.date} ${entry.search} ${entry.data.feed_notes??''} ${entry.data.notes??''}`}>
+  <a class="entry-image" href={url(entry.route)} aria-label={`Read ${colony.name}, ${entry.date}`}>
+    {cover?<img src={cover.src} width={cover.width} height={cover.height} loading="lazy" alt={`${colony.species} · ${entry.date}`}/>:<div class="no-image"><span>{colony.species.split(' ').map(w=>w[0]).join('')}</span><small>Field notes</small></div>}
+    <span class="image-label">{entry.media.length?`${entry.media.length} media`:'Written observation'}</span>
+  </a>
+  <div class="entry-copy"><div class="entry-meta"><time datetime={entry.date}>{dateLabel(entry.date)}</time><span class={`condition ${entry.data.condition}`}>{String(entry.data.condition)}</span></div><h3><a href={url(entry.route)}>{colony.name}</a></h3><p class="species">{colony.species}</p><p class="excerpt">{entry.excerpt||'A dated observation of colony life.'}</p><a class="text-link" href={url(entry.route)}>Read observation <span aria-hidden="true">↗</span></a></div>
+</article>

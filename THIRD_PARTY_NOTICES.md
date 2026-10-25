@@ -12,3 +12,5 @@ The Ant Journal Human Use License applies only to material whose holders distrib
 The locally generated PNG/JPEG test fixtures are original project assets, subject to the project license only to the extent protectable rights exist. They are not actual observation photographs.
 
 For downstream distributions, preserve notices from the dependency versions actually included. The project license cannot supply rights that a third-party author has not granted.
+
+The website adds Astro, Vite, sharp, unified/remark/rehype, and their locked dependencies under their supplied licenses. Those dependencies are not relicensed by the custom project license. The built website includes their available complete license notices in third-party-notices.txt alongside the original project license and upstream libheif example notice. ffmpeg is used as a separately installed build tool for video posters and is not distributed in the website artifact.

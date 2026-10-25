@@ -29,3 +29,7 @@ Verification: 80 tests passed, TypeScript checking and the bundle build passed, 
 ## Clarification of separately granted hosting rights
 
 Sections 3 and 4 of LICENSE now explicitly refer to section 5. Section 5 expressly preserves rights separately and validly granted by the relevant copyright holders under applicable GitHub Terms of Service or other hosting agreements, including for the purposes of the redistribution and termination clauses. This clarification creates no new grant and no blanket platform, affiliate, user, model, or fork exemption; separate grants retain their own scope, conditions, and duration. The LLM restrictions remain for uses requiring permission under the project license. AI_POLICY.md and the Licensing guide reflect the same scope. This clarification is not approval from GitHub or a guarantee against service restrictions.
+
+## GitHub Pages website
+
+Implemented the Astro website and default-branch Pages workflow. Navigation, observation routes, general pages, calendar, search, charts, selected-period feeding records, image derivatives, and video posters are derived from the source vault. Git remains read-only during this work; activation and remote deployment are owner actions. See [GitHub Pages](GitHubPages.md) for setup and [Acceptance](Acceptance.md) for evidence. The two remaining Russian sentences in the September 15 observation were translated faithfully; its YAML and all recorded measurements were preserved.

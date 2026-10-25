@@ -1,0 +1,17 @@
+---
+import {feeding} from '../../../ant-journal-plugin/src/journal';
+import type {Colony} from '../lib/types';
+import {url} from '../lib/config';
+const {colony}=Astro.props as {colony:Colony};
+const observations=colony.rows.map(row=>row.observation);
+const summary=feeding(observations,'0001-01-01','9999-12-31');
+const payload=observations.map(o=>({date:o.date,data:{feed_syrup:o.data.feed_syrup,feed_protein:o.data.feed_protein,feed_seeds:o.data.feed_seeds}}));
+const labels={feed_syrup:'Syrup',feed_protein:'Protein',feed_seeds:'Seeds'};
+---
+<section class="feeding-summary" data-feeding data-colony={colony.id}>
+  <p class="eyebrow">FEEDING IN THE SELECTED PERIOD</p>
+  <div data-feeding-summary>{summary.map(item=><span><strong>{item.count}</strong> {labels[item.field]} events<small> · {item.count}/{item.known} observed records</small></span>)}</div>
+  <details><summary>Recorded feeding dates</summary><div data-feeding-dates>{summary.map(item=><p><strong>{labels[item.field]}:</strong> {item.dates.length?item.dates.map(date=><a href={url(`journal/${colony.id}/${date}/`)}>{date} </a>):'No recorded feeding events.'}</p>)}</div></details>
+  <p>Only explicit true values count. The fraction uses recorded observations, not unobserved calendar days.</p>
+  <script type="application/json" data-feeding-data set:html={JSON.stringify(payload).replaceAll('<','\u003c')}/>
+</section>

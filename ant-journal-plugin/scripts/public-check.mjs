@@ -12,6 +12,7 @@ export const knownFixtures={
 const forbiddenPaths=[
   /^\.private\//i,
   /^ant-journal-plugin\/(?:test-vault|node_modules|dist|\.test-output)\//i,
+  /^website\/(?:dist|\.astro|\.generated|\.cache|\.test-output)\//i,
   /(?:^|\/)(?:\.git|\.aws|\.codex|\.agents|\.idea|\.vscode|node_modules|\.trash)\//i,
   /(?:^|\/)\.obsidian\/(?:workspace[^/]*\.json|cache\/)/i,
   /(?:^|\/)(?:\.env(?:\..*)?|credentials[^/]*\.json|[^/]*service-account[^/]*\.json)$/i,

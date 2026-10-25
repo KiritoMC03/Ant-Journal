@@ -23,3 +23,15 @@ All **75 tests passed**, TypeScript checking passed, and the core bundle built s
 The working-file publication scan reviewed **125 files with 0 findings**. The full audit also inspected **122 indexed files and 0 reachable commits**; it reported **6 NON_ENGLISH_FIRST_PARTY_TEXT findings in older indexed versions** of three colony cards, two Metadata Menu class files, and the October 23 observation. Their current working versions are English. The index is not synchronized or repaired during this read-only workflow. Rerun the full audit after any later authorized index update.
 
 In this Windows sandbox, pnpm attempted to register its project in a restricted global store. Verification therefore ran the installed local tools directly: node node_modules/typescript/bin/tsc --noEmit; node --import tsx --test test/*.test.ts; and the corresponding node build, archive, validation, and publication scripts. No dependency installation or Git write was needed for these checks.
+
+## Website implementation verification — 2026-10-25
+
+The sibling website project shares the core parser, measurements, statistics, feeding logic, and chart geometry. Its isolated automated suite covers source-value calculations with stale caches, discovery after edits/renames/deletions, new colonies, invalid identities, route collisions, Markdown/wikilink resolution, responsive image output, sanitization, unknown/zero/approximate chart values, multi-colony calendars, unresolved LFS pointers, prefix normalization, preservation of the last valid snapshot, and pruning of obsolete generated media.
+
+A watched isolated development vault passed actual HTTP add/edit/rename/delete route checks and a changed-measurement chart-data check without restarting its server. Synthetic records stayed outside AntJournal.
+
+Browser checks covered the real calendar's three separate October 25 colony links, colony filtering, full-text observation search, production calculations after narrowing dates, feeding counts within the selected period, a photo viewer with arrow-key navigation, and playback of an original MP4 (loaded successfully with no media error). Light/dark layouts and a 390-pixel viewport were inspected; document scroll width equalled client width after the mobile overflow fix. Compiled production JavaScript was checked as well as the dev preview.
+
+The root-site and /Ant-Journal/ builds passed internal-link checks and original-media SHA-256 comparisons. The generated site contains 28 content routes plus 404 and 11 original media files, approximately 60 MiB. A configurable budget fails the build instead of silently omitting media. The current source journal has two model warnings about cj-01 production/death estimates; these remain unchanged.
+
+Remote Pages activation, its Actions run, and hosted LFS/video delivery are not yet verified. The prepared workflow publishes only after the owner enables Actions-based Pages and supplies a normal push to the default branch. No source Git write or remote deployment was performed by this implementation task.

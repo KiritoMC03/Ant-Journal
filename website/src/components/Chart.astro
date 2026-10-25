@@ -1,0 +1,18 @@
+---
+import {series} from '../../../ant-journal-plugin/src/journal';
+import {display} from '../../../ant-journal-plugin/src/model';
+import {chartSvg,metrics} from '../lib/visuals';
+import type {Colony} from '../lib/types';
+import {url} from '../lib/config';
+const {colony}=Astro.props as {colony:Colony};
+const datasets=Object.fromEntries(metrics.map(([key])=>[key,series(colony.rows,key).map(p=>({...p,href:url(`journal/${colony.id}/${p.date}/`)}))]));
+const points=datasets.workers??[];
+---
+<section class="chart-panel" data-chart>
+  <div class="section-title"><div><p class="eyebrow">THE COLONY IN NUMBERS</p><h2>Growth, observed.</h2></div><span class="small-note">Hollow points mark estimates</span></div>
+  <div class="chart-controls controls"><label>Measurement<select data-metric>{metrics.map(([key,label])=><option value={key}>{label}</option>)}</select></label><label>From<input type="date" data-from value={points[0]?.date}/></label><label>To<input type="date" data-to value={points.at(-1)?.date}/></label></div>
+  <div data-plot set:html={chartSvg(points,'Workers')}/>
+  <p class="chart-note">Only observation dates produce points. Unknown values break the line. Lines connect measurements; they do not add observations between dates.</p>
+  <details><summary>View the measurement table</summary><div class="table-scroll"><table><thead><tr><th>Date</th><th data-value-label>Workers</th></tr></thead><tbody data-chart-table>{points.map(p=><tr><td><a href={p.href}>{p.date}</a></td><td>{p.value===null?'?':`${p.approximate?'~':''}${p.value}`}</td></tr>)}</tbody></table></div></details>
+  <script type="application/json" data-chart-data set:html={JSON.stringify(datasets).replaceAll('<','\u003c')}/>
+</section>

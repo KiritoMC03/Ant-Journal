@@ -1,0 +1,18 @@
+---
+import '../styles/global.css';
+import {url,repositoryUrl} from '../lib/config';
+import type {Snapshot,Page} from '../lib/types';
+const {snapshot,page}=Astro.props as {snapshot:Snapshot;page:Page};
+const nav=[['archive/','Journal'],['calendar/','Calendar'],['compare/','Colonies']];
+const other=snapshot.pages.filter(p=>p.kind==='page');
+---
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="color-scheme" content="light dark"/><meta name="description" content="An open field journal of ant colonies. Real observations, original photographs, and a closer look at life on a smaller scale."/><title>{page.kind==='home'?'Ant Journal · A closer look':`${page.title} · Ant Journal`}</title><link rel="icon" type="image/svg+xml" href={url('favicon.svg')}/><link rel="canonical" href={new URL(url(page.route),Astro.site??Astro.url.origin)}/><script is:inline>try{const theme=localStorage.getItem('ant-journal-theme');if(theme)document.documentElement.dataset.theme=theme}catch{}</script></head>
+<body data-version={snapshot.version} data-base={snapshot.base}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><a class="brand" href={url('')} aria-label="Ant Journal home"><svg viewBox="0 0 48 48" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><ellipse cx="24" cy="32" rx="7" ry="10"/><ellipse cx="24" cy="18" rx="4" ry="5"/><circle cx="24" cy="8" r="4"/><path d="m21 5-4-4m10 4 4-4M20 18l-9-5-6 4m15 5-10 1-5 8m15-5-8 9v8m16-25 9-5 6 4m-15 5 10 1 5 8m-15-5 8 9v8"/></svg><span>Ant Journal<small>AN OPEN FIELD ARCHIVE</small></span></a><nav aria-label="Main navigation">{nav.map(([route,label])=><a href={url(route)} aria-current={page.route===route?'page':undefined}>{label}</a>)}{other.length>0&&<details class="pages-menu"><summary>Pages</summary><div>{other.map(p=><a href={url(p.route)}>{p.title}</a>)}</div></details>}</nav><button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button></header>
+  <div class="update-banner" data-update hidden>A newer edition of the journal is available. <button type="button" onclick="location.reload()">Reload</button></div>
+  <main id="main"><slot/></main>
+  <footer class="site-footer"><div><a class="footer-title" href={url('')}>Ant Journal</a><p>Small lives. Careful observations.<br/>An ongoing archive, open to every curious reader.</p></div><div class="footer-links"><a href={url('archive/')}>All observations</a><a href={url('guide/usage/')}>Guide</a><a href={repositoryUrl}>Source on GitHub ↗</a></div><div class="footer-links"><a href={url('license/')}>Human Use License</a><a href={url('ai-policy/')}>LLM use policy</a><a href={url('third-party/')}>Third-party notices</a><a href={url('third-party-notices.txt')}>Website dependency licenses</a></div><p class="footer-note">Source measurements retain their uncertainty. A missing observation is never a zero.</p></footer>
+  <dialog class="lightbox" data-lightbox aria-label="Photograph viewer"><button class="lightbox-close" data-close aria-label="Close photograph" autofocus>✕</button><button data-previous-image aria-label="Previous photograph">←</button><figure><img alt=""/><figcaption></figcaption></figure><button data-next-image aria-label="Next photograph">→</button></dialog>
+  <script>import '../scripts/client';</script>
+</body></html>

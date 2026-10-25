@@ -1,0 +1,10 @@
+import {fileURLToPath} from 'node:url';
+import {resolve} from 'node:path';
+import {normalizeBase} from './text';
+export {escape,slug,normalizeBase} from './text';
+export const websiteRoot=process.env.JOURNAL_WEBSITE_ROOT??fileURLToPath(new URL('../../',import.meta.url));
+export const vaultRoot=resolve(process.env.JOURNAL_VAULT??resolve(websiteRoot,'../AntJournal'));
+export const generated=resolve(process.env.JOURNAL_GENERATED_DIR??resolve(websiteRoot,'.generated'));
+export const repositoryUrl=process.env.REPOSITORY_URL??'https://github.com/KiritoMC03/Ant-Journal';
+export const base=normalizeBase(process.env.SITE_BASE);
+export const url=(route:string)=>base+route.replace(/^\/+/, '');

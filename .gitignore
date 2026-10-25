@@ -6,6 +6,11 @@
 **/node_modules/
 /ant-journal-plugin/dist/
 /ant-journal-plugin/.test-output/
+/website/dist/
+/website/.astro/
+/website/.generated/
+/website/.cache/
+/website/.test-output/
 **/.pnpm-store/
 coverage/
 *.log

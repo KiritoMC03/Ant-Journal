@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {readSnapshot} from '../lib/snapshot';
+import {url} from '../lib/config';
+const snapshot=await readSnapshot();
+const page={title:'This trail ends here',route:'404/',kind:'page' as const};
+---
+<Layout {snapshot} {page}><section class="section"><p class="eyebrow">PAGE NOT FOUND</p><h1>This trail<br/><em>ends here.</em></h1><p class="intro">The page may have moved, or this observation has not been recorded.</p><a class="button" href={url('archive/')}>Return to the journal ↗</a></section></Layout>

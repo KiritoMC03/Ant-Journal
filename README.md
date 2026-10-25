@@ -47,7 +47,7 @@ pnpm run check:public
 
 The static archive index is refreshed explicitly after edits. Calendar Hub and charts refresh inside Obsidian after saving. [Data schema](docs/DataSchema.md), [Validation](docs/Validation.md), and [Acceptance](docs/Acceptance.md) explain calculations, error handling, and verification limits. [Notifications](docs/Notifications.md) covers optional independent feeding reminders.
 
-The proposed [GitHub Pages publishing design](docs/GitHubPages.md) describes an automatically generated website, live local previews, shared journal calculations, and media handling. It is an architecture plan; the website and deployment workflow are not implemented yet.
+The [Astro website](website/README.md) generates pages, navigation, calendar, charts, search, and media previews directly from AntJournal. Run npm run dev in website for a watched local preview. The prepared GitHub Pages workflow rebuilds after the owner's push; [setup and publication instructions](docs/GitHubPages.md) explain the one-time Pages setting. The website does not require manually refreshing Archive.md.
 
 ## Publication policy
 

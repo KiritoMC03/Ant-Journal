@@ -2,6 +2,8 @@
 
 A public archive of ant colony observations and original photographs, with an offline Obsidian workspace for validation, calendars, charts, and typed Metadata Menu controls. The source of truth is plain English Markdown with YAML properties.
 
+[View as website](https://kiritomc03.github.io/Ant-Journal/)
+
 ## License
 
 Original code, journal text, and media use the [Ant Journal Human Use License 1.0](LICENSE): royalty-free human use, including commercial use, modification, and redistribution, subject to preserving the license and its LLM-use prohibition in copies and adaptations. [LLM access, AI-assisted editing, and model training](AI_POLICY.md) are not licensed. Third-party material retains [its own terms](THIRD_PARTY_NOTICES.md). This is a custom source-available license, not an OSI-approved open-source license.
